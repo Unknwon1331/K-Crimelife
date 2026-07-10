@@ -1,76 +1,118 @@
 ﻿using GTANetworkAPI;
 using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.Text;
-using GVMP;
 
 namespace Crimelife
 {
-    public class MySqlHandler
+    public static class MySqlHandler
     {
-        public static async void ExecuteSync(MySqlQuery query)
+        public static void ExecuteSync(MySqlQuery query)
         {
-            using MySqlConnection con = new MySqlConnection(Configuration.connectionString);
-            con.Open();
-            MySqlCommand mySqlCommand = con.CreateCommand();
+            if (query == null)
+            {
+                throw new ArgumentNullException(nameof(query));
+            }
+
+            using MySqlConnection connection =
+                new MySqlConnection(Configuration.connectionString);
+
+            using MySqlCommand command =
+                connection.CreateCommand();
+
             try
             {
-                mySqlCommand.CommandText = query.Query;
-                foreach(Crimelife.MySqlParameter item in query.Parameters)
+                connection.Open();
+
+                command.CommandText = query.Query;
+
+                foreach (Crimelife.MySqlParameter parameter
+                         in query.Parameters)
                 {
-                    /*if (item.Obj is string)
-                    {
-                        mySqlCommand.CommandText.Replace(item.Name, $"'{item.Obj}'");
-                    }
-                    else*/ mySqlCommand.Parameters.AddWithValue(item.Name, item.Obj);
+                    command.Parameters.AddWithValue(
+                        parameter.Name,
+                        parameter.Obj ?? DBNull.Value
+                    );
                 }
-                mySqlCommand.ExecuteNonQuery();
+
+                command.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
-                Logger.Print("[EXCEPTION ExecuteSync] " + NAPI.Util.ToJson(query));
-                Logger.Print("[EXCEPTION ExecuteSync] " + ex.Message);
-                Logger.Print("[EXCEPTION ExecuteSync] " + ex.StackTrace);
-                Logger.Print("[EXCEPTION ExecuteSync] " + mySqlCommand.CommandText);
-            }
-            finally
-            {
-                con.Dispose();
+                Logger.Print(
+                    "[EXCEPTION ExecuteSync] Query: " +
+                    command.CommandText
+                );
+
+                Logger.Print(
+                    "[EXCEPTION ExecuteSync] Message: " +
+                    ex.Message
+                );
+
+                Logger.Print(
+                    "[EXCEPTION ExecuteSync] StackTrace: " +
+                    ex.StackTrace
+                );
             }
         }
 
         public static MySqlResult GetQuery(MySqlQuery query)
         {
-            MySqlConnection con = new MySqlConnection(Configuration.connectionString);
-            con.Open();
-            MySqlCommand mySqlCommand = con.CreateCommand();
+            if (query == null)
+            {
+                throw new ArgumentNullException(nameof(query));
+            }
+
+            MySqlConnection connection =
+                new MySqlConnection(Configuration.connectionString);
+
+            MySqlCommand command =
+                connection.CreateCommand();
+
             try
             {
-                mySqlCommand.CommandText = query.Query;
-                foreach (Crimelife.MySqlParameter item in query.Parameters)
+                connection.Open();
+
+                command.CommandText = query.Query;
+
+                foreach (Crimelife.MySqlParameter parameter
+                         in query.Parameters)
                 {
-                    mySqlCommand.Parameters.AddWithValue(item.Name, item.Obj);
+                    command.Parameters.AddWithValue(
+                        parameter.Name,
+                        parameter.Obj ?? DBNull.Value
+                    );
                 }
 
-                MySqlDataReader mySqlReader = mySqlCommand.ExecuteReader();
-                return new MySqlResult(mySqlReader, con);
+                MySqlDataReader reader =
+                    command.ExecuteReader();
+
+                return new MySqlResult(
+                    reader,
+                    connection
+                );
             }
             catch (Exception ex)
             {
-                Logger.Print("[EXCEPTION Query] " + NAPI.Util.ToJson(query));
-                Logger.Print("[EXCEPTION Query] " + ex.Message);
-                Logger.Print("[EXCEPTION Query] " + ex.StackTrace);
-                Logger.Print("[EXCEPTION ExecuteSync] " + mySqlCommand.CommandText);
+                Logger.Print(
+                    "[EXCEPTION GetQuery] Query: " +
+                    command.CommandText
+                );
+
+                Logger.Print(
+                    "[EXCEPTION GetQuery] Message: " +
+                    ex.Message
+                );
+
+                Logger.Print(
+                    "[EXCEPTION GetQuery] StackTrace: " +
+                    ex.StackTrace
+                );
+
+                command.Dispose();
+                connection.Dispose();
+
+                return null;
             }
-            finally
-            {
-                NAPI.Task.Run(() =>
-                {
-                    con.Dispose();
-                }, 1000);
-            }
-            return null;
         }
     }
 }
