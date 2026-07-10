@@ -1,0 +1,237 @@
+@font-face {
+    font-family: Poppins-Regular;
+    src: url('../fonts/poppins/Poppins-Regular.ttf');
+}
+
+@font-face {
+    font-family: Poppins-Bold;
+    src: url('../fonts/poppins/Poppins-Bold.ttf');
+}
+
+@font-face {
+    font-family: Poppins-Medium;
+    src: url('../fonts/poppins/Poppins-Medium.ttf');
+}
+
+@font-face {
+    font-family: Raleway-Regular;
+    src: url('../fonts/raleway/Raleway-Regular.ttf');
+}
+
+@font-face {
+    font-family: Raleway-Black;
+    src: url('../fonts/raleway/Raleway-Black.ttf');
+}
+
+@font-face {
+    font-family: Raleway-SemiBold;
+    src: url('../fonts/raleway/Raleway-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: Raleway-Bold;
+    src: url('../fonts/raleway/Raleway-Bold.ttf');
+}
+
+
+
+body,
+html {
+    height: 100%;
+    font-family: Poppins-Regular, sans-serif;
+    background-color: transparent;
+    background: transparent;
+    background-image: transparent;
+    user-select: none;
+}
+
+
+.title-aufsatz {
+    position: absolute;
+    font-size: 30px;
+    color: white;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    display: block;
+    font-weight: 100;
+    top: 15px;
+    z-index: 99999;
+    right: 360px;
+}
+
+.subtitle-aufsatz {
+    position: absolute;
+    font-size: 15px;
+    color: rgb(187, 187, 187);
+    line-height: 1.2;
+    text-align: center;
+    display: block;
+    top: 50px;
+    z-index: 99999;
+    max-width: 300px;
+    left: 0px;
+}
+
+.container {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 1000px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    background: rgba(17, 12, 16, 0.925);
+    border-radius: 25px;
+}
+
+.text {
+    position: absolute;
+    font-family: 'GilRoyBold', arial;
+    transform: translate(-50%, -50%);
+    top: 3%;
+    left: 31%;
+    font-size: 36px;
+    color: white;
+    width: 57%;
+}
+
+.rectengle1 {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 190px;
+    height: 3px;
+    top: 16%;
+    left: 12.3%;
+    background-image: linear-gradient(90deg, #3F16B5 0%, #168DB5 100%);
+    ;
+    border-radius: 3px;
+}
+
+.rectengle2 {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 3px;
+    top: 16%;
+    left: 24.5%;
+    background: #168DB5;
+    border-radius: 3px;
+}
+
+.infotext {
+    position: absolute;
+    font-family: 'GilRoySemiBold', arial;
+    transform: translate(-50%, -50%);
+    top: 22%;
+    left: 17.5%;
+    font-size: 80%;
+    color: white;
+    opacity: 50%;
+    width: 30%;
+}
+
+.advancedcontainer {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 60%;
+    left: 11.5%;
+    width: 200px;
+    height: 130px;
+    background: rgba(42, 38, 50, 0.9);
+    border-radius: 5px;
+    z-index: 9;
+}
+
+
+.adv {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 60%;
+    left: 11.5%;
+    width: 170px;
+    height: 60px;
+    z-index: 9999;
+}
+
+.bullicontainer {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 60%;
+    left: 36%;
+    width: 200px;
+    height: 130px;
+    background: rgba(42, 38, 50, 0.9);
+    border-radius: 5px;
+    z-index: 999;
+}
+
+.bulli {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 60%;
+    left: 36%;
+    width: 170px;
+    height: 60px;
+    z-index: 9999;
+}
+
+.spezicontainer {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 60%;
+    left: 62%;
+    width: 200px;
+    height: 130px;
+    background: rgba(42, 38, 50, 0.9);
+    border-radius: 5px;
+    z-index: 999;
+}
+
+.spezi {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 60%;
+    left: 62%;
+    width: 170px;
+    height: 60px;
+    z-index: 9999;
+}
+
+.gusicontainer {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 60%;
+    left: 88%;
+    width: 200px;
+    height: 130px;
+    background: rgba(42, 38, 50, 0.9);
+    border-radius: 5px;
+    z-index: 999;
+}
+
+.gusi {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 60%;
+    left: 88%;
+    width: 170px;
+    height: 50px;
+    z-index: 9999;
+}
+
+.closebutton {
+    transition: 1s;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 12%;
+    left: 96%;
+    width: 45px;
+    height: 45px;
+}
+
+.closebutton:hover {
+    transition: 1s;
+    width: 55px;
+    height: 55px;
+}

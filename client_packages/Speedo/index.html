@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Speedometer K-Scripts</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+   <label class="unselectable">
+    <div id="speedoclass" class="speedoclass">
+    <div class="speedometer"></div>
+	<div class="speedometer2"></div>
+	<div class="speedometer3"></div>
+	<div class="speedometer4"></div>
+	<div class="speedometer5"></div>
+	<div class="speedometer6"></div>
+	<div class="anzeige">
+	<img src="img/on.png" width="23px" height="23px" id="on">
+	<img src="img/unlocked.png" width="23px" height="23px" id="lock">
+	<div  id="speed2"></div>
+	<p id="weite">25040.20</p>
+	<p id="weitekm">KM</p>
+    </div>
+    <p id="KM">0 KM/H</p>
+</div>
+</label>
+    <div class="main">
+      <div class="icons">
+        <h3 class="only font"><span id="gear" class="font">2</span></h3>
+        <h3 class="speed white font">
+        <span id="speed" class="font"></span>
+        </h3>
+        <h3 class="only font"><span id="health" class="font"></span></h3>
+      </div>
+      <progress id="file" max="185" value=""></progress>
+    </div>
+    <script src="./car.js"></script>
+<script>
+let speedoc = document.getElementById("speedoclass")
+let KMH = document.getElementById('KMH')
+speedoclass.style.display = "none";
+let blocknone = 0;
+
+
+function speed(speed)
+
+{			
+    let KM = document.getElementById('KM').innerHTML = speed + " KM/H";
+}
+
+function engine(running)
+{			
+    if(running) {
+        document.getElementById('on').src = "img/on.png";
+    }
+    else
+    {
+        document.getElementById('on').src = "img/off.png";
+    }
+    
+}
+
+function locked(lock)
+{			
+    if(lock == 2) {
+        document.getElementById('lock').src = "img/locked.png";
+    }
+    else
+    {
+        document.getElementById('lock').src = "img/unlocked.png";
+    }
+    
+}
+
+//
+
+function show() {
+    speedoclass.style.display = "block";
+}
+
+function hide() {
+    speedoclass.style.display = "none";
+}
+
+</script>
+    <script>
+      function car(gear, speed, fclass) {
+        var classs = [
+          "Compacts",
+          "Sedans",
+          "SUVs",
+          "Coupes",
+          "Muscle",
+          "Sports Classics",
+          "Sports",
+          "Super",
+          "Motorcycles",
+          "Off-road",
+          "Industrial",
+          "Utility",
+          "Vans",
+          "Cycles",
+          "Boats",
+          "Helicopters",
+          "Planes",
+          "Service",
+          "Emergency",
+          "Military",
+          "Commercial",
+          "Trains",
+          "Open Wheels",
+        ];
+        document.querySelector("#gear").innerText = gear
+        document.querySelector("#file").setAttribute("value", speed);
+      }
+    </script>
+  </body>
+</html>

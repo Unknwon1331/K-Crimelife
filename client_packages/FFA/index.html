@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Open+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/383d1a29e0.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="one-bar">Paintball Arena</div>
+		
+
+        <div class="subtitle-ffa">Wähle eine Paintball Arena aus</div>
+
+        <img class="closebutton" src="img/unknown.png" onclick="closeffa()">
+
+        <img class="würfelpark" src="img/test.png">
+        <button type='button' class="btnstyle3" onclick="chooseFFA(1)">BEITRETEN</button>
+        <div id="würfelpark">Würfelpark</div>
+        <div class="memberzahlbackground1"></div>
+
+        <img class="triaden" src="img/triaden.png">
+        <button type='button' class="btnstyle2" onclick="chooseFFA(2)">BEITRETEN</button>
+        <div id="triaden">Triaden</div>
+        <div class="memberzahlbackground2"></div>
+
+        <img class="kirche" src="img/kirche.png">
+        <button type='button' class="btnstyle" onclick="chooseFFA(3)">BEITRETEN</button>
+        <div id="kirche">Kirche</div>
+        <div class="memberzahlbackground3"></div>
+	    <div class="one-bar2"></div>
+		<div class="one-bar3"></div>
+		<div class="one-bar4"></div>
+    </div>
+</body>
+
+<script>
+
+    function closeffa() {
+        mp.trigger("Client:ffaBrowser:destroyBrowser");
+    }
+
+    function chooseFFA(ffaid) {
+        mp.trigger("Client:ffaBrowser:chooseFFA", ffaid)
+        hidechooseFFA();
+    }
+
+    function hidechooseFFA() {
+        mp.trigger("Client:ffaBrowser:destroyBrowser");
+    }
+</script>

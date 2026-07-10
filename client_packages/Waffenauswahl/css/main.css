@@ -1,0 +1,669 @@
+/* !!HAUPTBOX NICHT ÄNDERN!! */
+* {
+    padding: 0;
+    margin: 0;
+    user-select: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.box {
+    height: 41vh;
+    width: 121vh;
+    margin-top: -21vh;
+    margin-left: -58vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
+    font-size: 1vh;
+    font-weight: 500;
+}
+
+
+
+/* !!WAFFENBOX!! */
+
+#wbox1 {
+    height: 32.5vh;
+    width: 23.2vh;
+    margin-top: -18vh;
+    position: fixed;
+    margin-left: -134.5vh;
+    top: 50vh;
+    left: 167.1vh;
+    background-color: #000000d4;
+    font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
+    font-size: 1vh;
+    border: 0.3vh solid #8d0000;
+    border-radius: 0.3vh;
+    font-weight: 500;
+}
+
+#wbox2 {
+    height: 32.5vh;
+    width: 23.2vh;
+    margin-top: -18vh;
+    position: fixed;
+    margin-left: -107.5vh;
+    top: 50vh;
+    left: 167.1vh;
+    background-color: #000000d4;
+    font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
+    font-size: 1vh;
+    border: 0.3vh solid #8d0000;
+    border-radius: 0.3vh;
+    font-weight: 500;
+}
+
+#wbox3 {
+    height: 32.5vh;
+    width: 23.2vh;
+    margin-top: -18vh;
+    position: fixed;
+    margin-left: -80.5vh;
+    top: 50vh;
+    left: 167.1vh;
+    background-color: #000000d4;
+    font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
+    font-size: 1vh;
+    border: 0.3vh solid #8d0000;
+    border-radius: 0.3vh;
+    font-weight: 500;
+}
+
+#wbox4 {
+    height: 32.5vh;
+    width: 23.2vh;
+    margin-top: -18vh;
+    position: fixed;
+    margin-left: -53.5vh;
+    top: 50vh;
+    left: 167.1vh;
+    background-color: #000000d4;
+    font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
+    font-size: 1vh;
+    border: 0.3vh solid #8d0000;
+    border-radius: 0.3vh;
+    font-weight: 500;
+}
+
+
+
+
+/* !!WAFFENBUTTONS!! */
+
+.kit-text {
+    margin: 1vh;
+    color: #8d0000;
+    text-align: center;
+    margin-top: 22vh;	
+}
+
+.kits {
+    position: fixed;
+    margin: 2.5vh;
+    background-color: #1a1a1aee;
+    color: #ccc;
+    text-align: center;
+    font-size: 1.5vh;
+    left: 35.3vh;
+    top: 55.5vh;
+    padding-top: 0.9vh;
+    overflow: hidden;
+    float: left;
+    width: 13vh;
+    height: 3vh;
+    border-radius: 0.2vh;
+    border: 0.3vh solid #11111147;
+}
+
+.kits2 {
+    position: fixed;
+    margin: 2.5vh;
+    background-color: #1a1a1aee;
+    color: #ccc;
+    text-align: center;
+    font-size: 1.5vh;
+    left: 62vh;
+    top: 55.5vh;
+    padding-top: 0.9vh;
+    overflow: hidden;
+    float: left;
+    width: 13vh;
+    height: 3vh;
+    border-radius: 0.2vh;
+    border: 0.3vh solid #11111147;
+}
+
+.kits3 {
+    position: fixed;
+    margin: 2.5vh;
+    background-color: #1a1a1aee;
+    color: #ccc;
+    text-align: center;
+    font-size: 1.5vh;
+    left: 88.9vh;
+    top: 55.5vh;
+    padding-top: 0.9vh;
+    overflow: hidden;
+    float: left;
+    width: 13vh;
+    height: 3vh;
+    border-radius: 0.2vh;
+    border: 0.3vh solid #11111147;
+}
+
+.kits4 {
+    position: fixed;
+    margin: 2.5vh;
+    background-color: #1a1a1aee;
+    color: #ccc;
+    text-align: center;
+    font-size: 1.5vh;
+    left: 116vh;
+    top: 55.5vh;
+    padding-top: 0.9vh;
+    overflow: hidden;
+    float: left;
+    width: 13vh;
+    height: 3vh;
+    border-radius: 0.2vh;
+    border: 0.3vh solid #11111147;
+}
+
+
+
+.kits:hover {
+    background-color: #8d0000;
+    color:#ccc;
+}
+
+.kits2:hover {
+	background-color: #8d0000;
+    color:#ccc;
+}
+
+.kits3:hover {
+    background-color: #8d0000;
+    color:#ccc;
+}
+
+.kits4:hover {
+    background-color: #8d0000;
+    color:#ccc;
+}
+
+
+
+
+
+/* !!WAFFENTEXT!! */
+
+
+
+.waffennameadv {
+    position: fixed;
+    height: 4.2vh;
+    left: 32.195vh;
+    width: 25vh;
+    top: 34.5vh;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2.2vh;
+    color: #ccc;
+    line-height: 4vh;
+}
+
+.waffennamepistoladv {
+    position: fixed;
+    height: 4.2vh;
+    left: 32.195vh;
+    width: 25vh;
+    top: 39vh;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2.2vh;
+    color: #ccc;
+    line-height: 4vh;
+}
+
+.waffennameaxtadv {
+    position: fixed;
+    height: 4.2vh;
+    left: 32.195vh;
+    width: 25vh;
+    top: 43.5vh;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2.2vh;
+    color: #ccc;
+    line-height: 4vh;
+}
+
+
+.waffennamecar {
+    position: fixed;
+    height: 4.2vh;
+    left: 59.379vh;
+    width: 25vh;
+    top: 34.5vh;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2.2vh;
+    color: #ccc;
+    line-height: 4vh;
+}
+
+.waffennamepistolcar {
+    position: fixed;
+    height: 4.2vh;
+    left: 59.379vh;
+    width: 25vh;
+    top: 39vh;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2.2vh;
+    color: #ccc;
+    line-height: 4vh;
+}
+
+.waffennameaxtcar {
+    position: fixed;
+    height: 4.2vh;
+    left: 59.379vh;
+    width: 25vh;
+    top: 43.5vh;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2.2vh;
+    color: #ccc;
+    line-height: 4vh;
+}
+
+
+.waffennamegusi {
+    position: fixed;
+    height: 4.2vh;
+    left: 86.29vh;
+    width: 25vh;
+    top: 34.5vh;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2.2vh;
+    color: #ccc;
+    line-height: 4vh;
+}
+
+.waffennamepistolgusi {
+    position: fixed;
+    height: 4.2vh;
+    left: 86.29vh;
+    width: 25vh;
+    top: 39vh;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2.2vh;
+    color: #ccc;
+    line-height: 4vh;
+}
+
+.waffennameaxtgusi {
+    position: fixed;
+    height: 4.2vh;
+    left: 86.29vh;
+    width: 25vh;
+    top: 43.5vh;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2.2vh;
+    color: #ccc;
+    line-height: 4vh;
+}
+
+.waffennamebullp {
+    position: fixed;
+    height: 4.2vh;
+    left: 113.29vh;
+    width: 25vh;
+    top: 34.5vh;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2.2vh;
+    color: #ccc;
+    line-height: 4vh;
+}
+
+.waffennamepistolbullp {
+    position: fixed;
+    height: 4.2vh;
+    left: 113.29vh;
+    width: 25vh;
+    top: 39vh;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2.2vh;
+    color: #ccc;
+    line-height: 4vh;
+}
+
+.waffennameaxtbullp {
+    position: fixed;
+    height: 4.2vh;
+    left: 113.29vh;
+    width: 25vh;
+    top: 43.5vh;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2.2vh;
+    color: #ccc;
+    line-height: 4vh;
+}
+
+
+
+
+
+
+
+
+/* !!WAFFENBILDER!! */
+
+
+.waffenbildadv {
+    position: fixed;
+    height: 5vh;
+    left: 25.195vh;
+    width: 25vh;
+    top: 49.5vh;
+    color: #ccc;
+	background-image: url(AdvanvcedRifle.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 3vw;
+}
+
+
+.waffenbildpistoladv {
+    position: fixed;
+    height: 5vh;
+    left: 32.195vh;
+    width: 25vh;
+    top: 49.5vh;
+    color: #ccc;
+	background-image: url(HeavyPistol.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 3vw;
+}
+
+.waffenbildaxtadv {
+    position: fixed;
+    height: 5vh;
+    left: 38.195vh;
+    width: 25vh;
+    top: 49.5vh;
+    color: #ccc;
+	background-image: url(BattleAxe.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 3vw;
+}
+
+.waffenbildcar {
+    position: fixed;
+    height: 5vh;
+    left: 52.379vh;
+    width: 25vh;
+    top: 49.5vh;
+    color: #ccc;
+	background-image: url(CarbineRifle.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 3vw;
+}
+
+
+.waffenbildpistolcar {
+    position: fixed;
+    height: 5vh;
+    left: 59.379vh;
+    width: 25vh;
+    top: 49.5vh;
+    color: #ccc;
+	background-image: url(HeavyPistol.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 3vw;
+}
+
+.waffenbildaxtcar {
+    position: fixed;
+    height: 5vh;
+    left: 65.379vh;
+    width: 25vh;
+    top: 49.5vh;
+    text-align: center;
+    color: #ccc;
+	background-image: url(BattleAxe.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 3vw;
+}
+
+
+.waffenbildgusi {
+    position: fixed;
+    height: 5vh;
+    left: 79.29vh;
+    width: 25vh;
+    top: 49.5vh;
+    text-align: center;
+    color: #ccc;
+	background-image: url(Gusenberg.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 3vw;
+}
+
+
+.waffenbildpistolgusi {
+    position: fixed;
+    height: 5vh;
+    left: 86.29vh;
+    width: 25vh;
+    top: 49.5vh;
+    text-align: center;
+    color: #ccc;
+	background-image: url(HeavyPistol.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 3vw;
+}
+
+.waffenbildaxtgusi {
+    position: fixed;
+    height: 5vh;
+    left: 92.29vh;
+    width: 25vh;
+    top: 49.5vh;
+    color: #ccc;
+	background-image: url(BattleAxe.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 3vw;
+}
+
+.waffenbildbullp {
+    position: fixed;
+    height: 5vh;
+    left: 107.29vh;
+    width: 25vh;
+    top: 49.5vh;
+    color: #ccc;
+	background-image: url(BullpupRifle.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 3vw;
+}
+
+
+.waffenbildpistolbullp {
+    position: fixed;
+    height: 5vh;
+    left: 113.29vh;
+    width: 25vh;
+    top: 49.5vh;
+    color: #ccc;
+	background-image: url(HeavyPistol.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 3vw;
+}
+
+.waffenbildaxtbullp {
+    position: fixed;
+    height: 5vh;
+    left: 119.29vh;
+    width: 25vh;
+    top: 49.5vh;
+    color: #ccc;
+	background-image: url(BattleAxe.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 3vw;
+}
+
+
+
+/* !!Überschrift mit Box!! */
+
+
+
+.one-bar {
+    position: fixed;
+    height: 4vh;
+    left: 86.6vh;
+    width: 23.2vh;
+    top: 28.3vh;
+    text-align: center;
+    background-color: #8d0000;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2vh;
+    color: #ccc;
+    line-height: 4vh;
+    border-radius: 0.1vh;
+    border: 0.3vh solid #700101;
+}
+
+
+.one-bar2 {
+    position: fixed;
+    height: 4vh;
+    left: 32.6vh;
+    width: 23.2vh;
+    top: 28.3vh;
+    text-align: center;
+    background-color: #8d0000;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2vh;
+    color: #ccc;
+    line-height: 4vh;
+    border: 0.3vh solid #700101;
+    border-radius: 0.1vh;
+}
+
+.one-bar3 {
+    position: fixed;
+    height: 4vh;
+    left: 59.6vh;
+    width: 23.2vh;
+    top: 28.3vh;
+    text-align: center;
+    background-color: #8d0000;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2vh;
+    color: #ccc;
+    line-height: 4vh;
+    border: 0.3vh solid #700101;
+    border-radius: 0.1vh;
+}
+
+.one-bar4 {
+    position: fixed;
+    height: 4vh;
+    left: 113.6vh;
+    width: 23.2vh;
+    top: 28.3vh;
+    text-align: center;
+    background-color: #8d0000;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2vh;
+    color: #ccc;
+    line-height: 4vh;
+    border: 0.3vh solid #700101;
+    border-radius: 0.1vh;
+}
+
+
+/* !!exit!! */
+
+.exitbg {	
+    position: fixed;
+    background-color: #0000009e;
+    box-shadow: 1px 2px 8px #000000;
+    width: 1.5vw;
+    height: 1.7vw;
+    left: 132vh;
+    top: 47vh;
+}
+
+.exit {	
+    position: fixed;
+    background-color: #111111cb;
+    background-image: url(close.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    border: solid .3vh #111;
+    background-size: 1vw;
+    width: 1.5vw;
+    height: 1.7vw;
+    left: 138vh;
+    top: 26vh;
+}
+
+.exit:hover{
+    border: solid .3vh #700101;
+}

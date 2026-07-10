@@ -1,0 +1,294 @@
+* {
+    user-select: none;
+}
+.ScussiYaSelame{
+overflow: hidden;
+}
+.speedometer {
+position: absolute;
+    display: block;
+    overflow: visible;
+    top: 950px;
+    left: 833px;
+    background-color: #000000e3;
+    color: #000000e3;
+    opacity: 0.8;
+    transform: skew(-8deg);
+    width: 267px;
+    height: 103px;
+	
+}
+
+.speedometer2 {
+    position: absolute;
+    display: block;
+    overflow: visible;
+    top: 996px;
+    left: 893px;
+    background-color: #000000e3;
+    color: #000000e3;
+    opacity: 0.8;
+    transform: skew(-8deg);
+    width: 161px;
+    height: 40px;
+	/* border-bottom: 2px solid #c30000; */
+}
+
+.speedometer3 {
+position: absolute;
+    display: block;
+    overflow: visible;
+    top: 996px;
+    left: 842px;
+    background-color: #000000e3;
+    color: #000000e3;
+    opacity: 0.8;
+    transform: skew(-8deg);
+    width: 42px;
+    height: 40px;
+}
+
+.speedometer4 {
+position: absolute;
+    display: block;
+    overflow: visible;
+    top: 964px;
+    left: 946px;
+    background-color: #000000e3;
+    color: #000000e3;
+    opacity: 0.8;
+    transform: skew(-8deg);
+    width: 114px;
+    height: 25px;
+}
+
+.speedometer5 {
+    position: absolute;
+    display: block;
+    overflow: visible;
+    top: 964px;
+    left: 1067px;
+    background-color: #000000e3;
+    color: #000000e3;
+    opacity: 0.8;
+    transform: skew(-8deg);
+    width: 21px;
+    height: 72px;
+}
+
+.speedometer6 {
+position: absolute;
+    display: block;
+    overflow: visible;
+    top: 988px;
+    left: 1066px;
+    background-color: #ffbc00;
+    opacity: 0.8;
+    transform: skew(-8deg);
+    width: 20px;
+    height: 46px;
+}
+
+ 
+ 
+#on {
+position: absolute;
+    top: -74px;
+    left: -538px;
+    width: 20px;
+    height: 20px;
+    /* background-image: url(https://cdn.discordapp.com/attachments/956072301005266945/1033872030258434058/on.png); */
+    background-size: 20px;
+}
+
+
+#lock {
+position: absolute;
+    top: -72px;
+    left: -496px;
+    width: 16px;
+    height: 16px;
+    /* background-image: url(https://cdn.discordapp.com/attachments/956072301005266945/1033872031386710026/204075.png); */
+    background-size: 16px;
+}
+
+#speed2 {
+position: absolute;
+    top: -62px;
+    left: -365px;
+    width: 19px;
+    height: 18px;
+    background-image: url(https://cdn.discordapp.com/attachments/956072301005266945/1033872030585585695/speed.png);
+    background-size: 20px;
+}
+
+
+#fuel {
+position: absolute;
+    top: 13px;
+    left: 224px;
+    width: 34px;
+    height: 30px;
+    background-image: url(https://cdn.discordapp.com/attachments/827204278602432522/899845031471480902/fuel.png);
+    background-size: 34px;
+}
+
+
+#kmpng {
+position: absolute;
+    top: 14px;
+    left: 310px;
+    width: 42px;
+    height: 29px;
+    background-image: url(https://cdn.discordapp.com/attachments/827204278602432522/899845032423612426/km.png);
+    background-size: 39px;
+}
+
+
+.anzeige {
+    position: absolute;
+    top: 1030px;
+    left: 1400px;
+}
+
+#tank {
+position: absolute;
+    top: -38px;
+    left: -542px;
+    color: #c30000;
+    font-family: Arial;
+    font-style: normal;
+    font-weight: 530;
+}
+
+#tankl {
+    position: absolute;
+    top: 5px;
+    left: 295px;
+    color: #f1f1f1;
+    font-family: Arial;
+    font-style: normal; font-weight: 530;
+}
+
+#weite {
+position: absolute;
+    top: -61px;
+    left: -448px;
+    color: #c30000;
+    font-family: Arial;
+    font-style: normal;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+#weitekm {
+position: absolute;
+    top: -61px;
+    left: -390px;
+    color: #f1f1f1;
+    font-family: Arial;
+    font-style: normal;
+    font-size: 13px;
+    font-weight: 530;
+}
+
+*#KMH {
+    position: absolute;
+    top: 23px;
+    left: 145px;
+    color: #f1f1f1;
+    font-family: Arial;
+    font-style: normal; font-weight: 530;
+}
+
+#KM {
+position: absolute;
+    top: 93.4vh;
+    left: 950px;
+    color: #f1f1f1;
+    font-family: Arial;
+    font-style: normal;
+    font-weight: 530;
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 16px;
+}
+
+@font-face {
+  font-family: digital;
+  src: url(./font/DSDIGI.woff);
+}
+
+.main {
+  width: 100%;
+  height: 99vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+progress {
+    border-radius: 7px;
+    position: fixed;
+    width: 8.3%;
+    left: 82.6vh;
+    top: 95.6vh;
+    height: 0.2em;
+    box-shadow: 1px 1px 4px #000000e3;
+
+}
+
+
+progress::-webkit-progress-bar {
+  background-color: #00000000;
+  opacity: 9;
+  transform: skew(-4deg);
+}
+progress::-webkit-progress-value {
+  background-color: #c30000;
+  box-shadow: 1px 1px 5px 1px #000000e3;
+  transform: skew(-4deg);
+}
+.icons {
+  display: flex;
+  width: 30%;
+  justify-content: space-between;
+  margin-bottom: 0.5em;
+}
+
+.font {
+  	font-family: Arial;
+    font-style: normal;
+    font-weight: 530;
+}
+
+.only {
+    color: #c30000;
+    position: fixed;
+    top: 93.2vh;
+    left: 79.4vh;
+    font-size: 1.2em;
+}
+
+.white {
+  color: white;
+  font-size: 1.2em;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="./stylewindow.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Open+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/383d1a29e0.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./index.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="title-aufsatz"><span style="color: red; margin-right: -55px;">AdvancedRifle</span></div>
+
+        <a href="index.html"> </href><img class="closebutton" src="img/unknown.png" </img> </a>
+        <div class="advancedcontainer"></div>
+        <div class="adv">Schalldämpfer</div>
+        <div class="advbuy1" onclick="selectWeaponCompADV(1)">Ausrüsten (2500$)</div>
+
+        <div class="advanced2container"></div>
+        <div class="adv2">Visier</div>
+        <div class="advbuy2" onclick="selectWeaponCompADV(2)">Ausrüsten (5000$)</div>
+
+        <div class="advanced3container"></div>
+        <div class="adv3">Magazin</div>
+        <div class="advbuy3" onclick="selectWeaponCompADV(3)">Ausrüsten (15000$)</div>
+    </div>
+
+</body>
+
+<script>
+    function selectWeaponCompADV(compid) {
+        mp.trigger("Client:aufsatzBrowser:chooseWeaponCompADV", compid);
+    }
+
+    function hideselectWeaponCompADV() {
+        mp.trigger("Client:aufsatzBrowser:destroyBrowser");
+    }
+</script>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <link rel="stylesheet" href="Time.css" type="text/css">
+   </head>
+<title>KSCRIPTS</title>
+
+ <body onload="StarteUhrzeitUndDatum()">
+    <div class="datum" id="kscripts"></div>
+	<div class="time" id="ramon"></div>
+	<div class="bild"></div>
+	<script>
+	  
+	    function KscriptsCheckit(i) {
+            if (i < 10) { i = "0" + i };
+            return i;
+        }
+
+        function StarteUhrzeitUndDatum() {
+            const Kscriptsday = new Date();
+            let std = Kscriptsday.getHours();
+            let min = Kscriptsday.getMinutes();
+            let sec = Kscriptsday.getSeconds();
+            min = KscriptsCheckit(min);
+            sec = KscriptsCheckit(sec);
+            setTimeout(StarteUhrzeitUndDatum, 1000);
+            jahr = Kscriptsday.getFullYear();
+            monat = Kscriptsday.getMonth() + 1;
+            tag = Kscriptsday.getDate();
+            document.getElementById("kscripts").innerHTML = "";
+			document.getElementById("ramon").innerHTML = "";
+        }
+		
+    </script>
+    <script src="./index.js" type="text/javascript"></script>
+  </body>
+</html>

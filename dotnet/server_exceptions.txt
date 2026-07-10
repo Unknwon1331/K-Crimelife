@@ -1,0 +1,96 @@
+
+==================[07.03.2023 00:16:51]==================
+System.IO.FileLoadException: Could not load file or assembly 'Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed'.
+   at void System.Runtime.Loader.AssemblyLoadContext.LoadFromPath(IntPtr ptrNativeAssemblyLoadContext, string ilPath, string niPath, ObjectHandleOnStack retAssembly)
+=========================================================
+
+==================[07.03.2023 00:16:51]==================
+System.IO.FileLoadException: Could not load file or assembly 'Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed'. Could not find or load a specific file. (0x80131621)
+File name: 'Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed'
+ ---> System.IO.FileLoadException: Could not load file or assembly 'Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed'.
+   at void System.Runtime.Loader.AssemblyLoadContext.LoadFromPath(IntPtr ptrNativeAssemblyLoadContext, string ilPath, string niPath, ObjectHandleOnStack retAssembly)
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.LoadFromAssemblyPath(string assemblyPath)
+   at Assembly System.Reflection.Assembly.LoadFrom(string assemblyFile)
+   at Assembly System.Reflection.Assembly.LoadFromResolveHandler(object sender, ResolveEventArgs args)
+   at RuntimeAssembly System.Runtime.Loader.AssemblyLoadContext.InvokeResolveEvent(ResolveEventHandler eventHandler, RuntimeAssembly assembly, string name)
+   at RuntimeAssembly System.Runtime.Loader.AssemblyLoadContext.OnAssemblyResolve(RuntimeAssembly assembly, string assemblyFullName)
+   at RuntimeType ModuleHandle.ResolveTypeHandleInternal(RuntimeModule module, int typeToken, RuntimeTypeHandle[] typeInstantiationContext, RuntimeTypeHandle[] methodInstantiationContext)
+
+
+=========================================================
+
+==================[07.03.2023 00:16:51]==================
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
+ ---> System.IO.FileLoadException: Could not load file or assembly 'Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed'. Could not find or load a specific file. (0x80131621)
+File name: 'Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed'
+ ---> System.IO.FileLoadException: Could not load file or assembly 'Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed'.
+   at void System.Runtime.Loader.AssemblyLoadContext.LoadFromPath(IntPtr ptrNativeAssemblyLoadContext, string ilPath, string niPath, ObjectHandleOnStack retAssembly)
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.LoadFromAssemblyPath(string assemblyPath)
+   at Assembly System.Reflection.Assembly.LoadFrom(string assemblyFile)
+   at Assembly System.Reflection.Assembly.LoadFromResolveHandler(object sender, ResolveEventArgs args)
+   at RuntimeAssembly System.Runtime.Loader.AssemblyLoadContext.InvokeResolveEvent(ResolveEventHandler eventHandler, RuntimeAssembly assembly, string name)
+   at RuntimeAssembly System.Runtime.Loader.AssemblyLoadContext.OnAssemblyResolve(RuntimeAssembly assembly, string assemblyFullName)
+   at RuntimeType ModuleHandle.ResolveTypeHandleInternal(RuntimeModule module, int typeToken, RuntimeTypeHandle[] typeInstantiationContext, RuntimeTypeHandle[] methodInstantiationContext)
+   at Type System.Reflection.RuntimeModule.ResolveType(int metadataToken, Type[] genericTypeArguments, Type[] genericMethodArguments)
+   at bool System.Reflection.CustomAttribute.FilterCustomAttributeRecord(MetadataToken caCtorToken, in MetadataImport scope, RuntimeModule decoratedModule, MetadataToken decoratedToken, RuntimeType attributeFilterType, bool mustBeInheritable, ref ListBuilder<object> derivedAttributes, out RuntimeType attributeType, out IRuntimeMethodInfo ctor, out bool ctorHasParameters, out bool isVarArg)
+   at bool System.Reflection.CustomAttribute.IsCustomAttributeDefined(RuntimeM
+==================[10.03.2023 23:10:38]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'Tattoo' in 'where clause'
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[10.03.2023 23:10:39]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'Tattoo' in 'where clause'
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[10.03.2023 23:10:39]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'Tattoo' in 'where clause'
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[10.03.2023 23:10:39]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'Tattoo' in 'where clause'
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[10.03.2023 23:10:39]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'Tattoo' in 'where clause'
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[10.03.2023 23:10:39]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'Tattoo' in 'where clause'
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[10.03.2023 23:10:39]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'Tattoo' in 'where clause'
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[10.03.2023 23:10:39]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'Tattoo' in 'where clause'
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[10.03.2023 23:10:39]==================
+System.IO.FileNotFoundException: Could not load file or assembly 'C:\Users\Administrator\Desktop\K-Crimelife\dotnet\resources\Crimelife\MySql.Data.resources.dll'. Das System kann die angegebene Datei nicht finden.
+File name: 'C:\Users\Administrator\Desktop\K-Crimelife\dotnet\resources\Crimelife\MySql.Data.resources.dll'
+   at void System.Runtime.Loader.AssemblyLoadContext.LoadFr

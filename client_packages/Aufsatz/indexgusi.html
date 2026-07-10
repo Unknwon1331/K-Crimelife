@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="./stylewindow.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Open+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/383d1a29e0.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./index.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="title-aufsatz"><span style="color: red; margin-right: -55px;">Gusenberg</span></div>
+
+        <a href="index.html"> </href><img class="closebutton" src="img/unknown.png" </img> </a>
+        <div class="advancedcontainer"></div>
+        <div class="adv">Magazin</div>
+        <div class="advbuy1" onclick="selectWeaponCompGusi(1)">Ausrüsten (15000$)</div>
+    </div>
+
+</body>
+
+<script>
+    function selectWeaponCompGusi(compid) {
+        mp.trigger("Client:aufsatzBrowser:chooseWeaponCompGusi", compid);
+    }
+
+    function hideselectWeaponCompGusi() {
+        mp.trigger("Client:aufsatzBrowser:destroyBrowser");
+    }
+</script>

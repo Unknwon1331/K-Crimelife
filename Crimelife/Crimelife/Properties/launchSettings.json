@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Crimelife": {
+      "commandName": "Project",
+      "workingDirectory": "C:\\Users\\Administrator\\Desktop\\K-Crimelife\\dotnet\\resources\\Crimelife\\Debug\\Crimelife.dll"
+    }
+  }
+}

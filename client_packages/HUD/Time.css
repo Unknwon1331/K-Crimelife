@@ -1,0 +1,35 @@
+/*kscripts*/
+body {
+	 /*background-color: #000;*/ 
+}
+
+.datum {
+    margin-left: 155.4vh;
+    margin-top: 13.3vh;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+	color: rgba(255, 255, 255, 0.822);
+    font-size: 18px;
+}
+
+.time {
+    margin-top: -2.1vh;
+    margin-left: 141vh;
+    color: rgba(255, 255, 255, 0.822);
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.bild {
+    position: absolute;
+    background-image: url(hud.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 15.5vw;
+    width: 320px;
+    height: 90px;
+    top: 0vh;
+    margin-left: 146.5vh;
+}

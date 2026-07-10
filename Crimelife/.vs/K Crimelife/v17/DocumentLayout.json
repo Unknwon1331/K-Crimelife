@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ramon\\OneDrive\\Desktop\\K-Crimelife\\K-Crimelife\\Crimelife\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5EC716C2-99C6-42D1-ACC7-F56ADBE73660}|Crimelife\\K Crimelife.csproj|c:\\users\\ramon\\onedrive\\desktop\\k-crimelife\\k-crimelife\\crimelife\\crimelife\\module\\faction\\factionmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5EC716C2-99C6-42D1-ACC7-F56ADBE73660}|Crimelife\\K Crimelife.csproj|solutionrelative:crimelife\\module\\faction\\factionmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EC716C2-99C6-42D1-ACC7-F56ADBE73660}|Crimelife\\K Crimelife.csproj|c:\\users\\ramon\\onedrive\\desktop\\k-crimelife\\k-crimelife\\crimelife\\crimelife\\k crimelife.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{5EC716C2-99C6-42D1-ACC7-F56ADBE73660}|Crimelife\\K Crimelife.csproj|solutionrelative:crimelife\\k crimelife.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FactionModule.cs",
+              "DocumentMoniker": "C:\\Users\\ramon\\OneDrive\\Desktop\\K-Crimelife\\K-Crimelife\\Crimelife\\Crimelife\\Module\\Faction\\FactionModule.cs",
+              "RelativeDocumentMoniker": "Crimelife\\Module\\Faction\\FactionModule.cs",
+              "ToolTip": "C:\\Users\\ramon\\OneDrive\\Desktop\\K-Crimelife\\K-Crimelife\\Crimelife\\Crimelife\\Module\\Faction\\FactionModule.cs",
+              "RelativeToolTip": "Crimelife\\Module\\Faction\\FactionModule.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T13:38:52.181Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "K Crimelife.csproj",
+              "DocumentMoniker": "C:\\Users\\ramon\\OneDrive\\Desktop\\K-Crimelife\\K-Crimelife\\Crimelife\\Crimelife\\K Crimelife.csproj",
+              "RelativeDocumentMoniker": "Crimelife\\K Crimelife.csproj",
+              "ToolTip": "C:\\Users\\ramon\\OneDrive\\Desktop\\K-Crimelife\\K-Crimelife\\Crimelife\\Crimelife\\K Crimelife.csproj",
+              "RelativeToolTip": "Crimelife\\K Crimelife.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-18T14:14:58.28Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

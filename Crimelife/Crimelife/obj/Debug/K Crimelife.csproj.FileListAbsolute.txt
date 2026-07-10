@@ -1,0 +1,27 @@
+C:\Users\Administrator\Desktop\K-Crimelife\dotnet\resources\Crimelife\kcrimelife.deps.json
+C:\Users\Administrator\Desktop\K-Crimelife\dotnet\resources\Crimelife\kcrimelife.dll
+C:\Users\Administrator\Desktop\K-Crimelife\dotnet\resources\Crimelife\kcrimelife.pdb
+C:\Users\Administrator\Desktop\K-Crimelife\Crimelife\Crimelife\obj\Debug\K Crimelife.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\K-Crimelife\Crimelife\Crimelife\obj\Debug\K Crimelife.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Desktop\K-Crimelife\Crimelife\Crimelife\obj\Debug\K Crimelife.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\K-Crimelife\Crimelife\Crimelife\obj\Debug\K Crimelife.csproj.CopyComplete
+C:\Users\Administrator\Desktop\K-Crimelife\Crimelife\Crimelife\obj\Debug\kcrimelife.dll
+C:\Users\Administrator\Desktop\K-Crimelife\Crimelife\Crimelife\obj\Debug\kcrimelife.pdb
+C:\Users\ramon\Desktop\Ramon\K-Crimelife\dotnet\resources\Crimelife\kcrimelife.deps.json
+C:\Users\ramon\Desktop\Ramon\K-Crimelife\dotnet\resources\Crimelife\kcrimelife.dll
+C:\Users\ramon\Desktop\Ramon\K-Crimelife\dotnet\resources\Crimelife\kcrimelife.pdb
+C:\Users\ramon\Desktop\Ramon\K-Crimelife\Crimelife\Crimelife\obj\Debug\K Crimelife.csproj.AssemblyReference.cache
+C:\Users\ramon\Desktop\Ramon\K-Crimelife\Crimelife\Crimelife\obj\Debug\K Crimelife.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ramon\Desktop\Ramon\K-Crimelife\Crimelife\Crimelife\obj\Debug\K Crimelife.csproj.CoreCompileInputs.cache
+C:\Users\ramon\Desktop\Ramon\K-Crimelife\Crimelife\Crimelife\obj\Debug\K Crimelife.csproj.CopyComplete
+C:\Users\ramon\Desktop\Ramon\K-Crimelife\Crimelife\Crimelife\obj\Debug\kcrimelife.dll
+C:\Users\ramon\Desktop\Ramon\K-Crimelife\Crimelife\Crimelife\obj\Debug\kcrimelife.pdb
+C:\Users\ramon\OneDrive\Desktop\K-Crimelife\K-Crimelife\dotnet\resources\Crimelife\kcrimelife.deps.json
+C:\Users\ramon\OneDrive\Desktop\K-Crimelife\K-Crimelife\dotnet\resources\Crimelife\kcrimelife.dll
+C:\Users\ramon\OneDrive\Desktop\K-Crimelife\K-Crimelife\dotnet\resources\Crimelife\kcrimelife.pdb
+C:\Users\ramon\OneDrive\Desktop\K-Crimelife\K-Crimelife\Crimelife\Crimelife\obj\Debug\K Crimelife.csproj.AssemblyReference.cache
+C:\Users\ramon\OneDrive\Desktop\K-Crimelife\K-Crimelife\Crimelife\Crimelife\obj\Debug\K Crimelife.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ramon\OneDrive\Desktop\K-Crimelife\K-Crimelife\Crimelife\Crimelife\obj\Debug\K Crimelife.csproj.CoreCompileInputs.cache
+C:\Users\ramon\OneDrive\Desktop\K-Crimelife\K-Crimelife\Crimelife\Crimelife\obj\Debug\K Crimel.64CA36B4.Up2Date
+C:\Users\ramon\OneDrive\Desktop\K-Crimelife\K-Crimelife\Crimelife\Crimelife\obj\Debug\kcrimelife.dll
+C:\Users\ramon\OneDrive\Desktop\K-Crimelife\K-Crimelife\Crimelife\Crimelife\obj\Debug\kcrimelife.pdb
