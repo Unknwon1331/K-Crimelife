@@ -4,7 +4,7 @@ using System;
 
 namespace Crimelife
 {
-    public class PlayerDisconnect : Script
+    class PlayerDisconnect : Script
     {
         [ServerEvent(Event.PlayerDisconnected)]
         public void OnPlayerDisconnect(
@@ -17,19 +17,18 @@ namespace Crimelife
                 return;
             }
 
-            string playerName =
-                string.IsNullOrWhiteSpace(player.Name)
-                    ? "Unbekannt"
-                    : player.Name;
+            string playerName = string.IsNullOrWhiteSpace(player.Name)
+                ? "Unbekannt"
+                : player.Name;
 
             try
             {
                 WebhookSender.SendMessage(
-                    "Spieler getrennt",
-                    $"Der Spieler {playerName} hat den Server verlassen. " +
+                    "Offlineflucht",
+                    $"Der Spieler {playerName} hat sich ausgeloggt. " +
                     $"Typ: {type}, Grund: {reason}",
                     Webhooks.disconnectlogs,
-                    "Disconnect"
+                    "Offlineflucht"
                 );
             }
             catch (Exception exception)
@@ -63,10 +62,10 @@ namespace Crimelife
                     }
 
                     nearbyDbPlayer.SendNotification(
-                        $"Der Spieler {playerName} hat den Server verlassen.",
+                        $"Der Spieler {playerName} hat sich ausgeloggt.",
                         4000,
                         "yellow",
-                        "Disconnect"
+                        "Offlineflucht"
                     );
                 }
             }
