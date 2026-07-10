@@ -1,65 +1,116 @@
 ﻿using GTANetworkAPI;
 using GVMP;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Crimelife
 {
-   public static class PlayerDb
+    public static class PlayerDb
     {
-		public static DbPlayer GetPlayer(this Player player)
-		{
-			if ((Entity)(object)player == (Entity)null)
-			{
-				return null;
-			}
-			if (!((Entity)player).HasData("player"))
-			{
-				return null;
-			}
-			DbPlayer dbPlayer = ((Entity)player).GetData<DbPlayer>("player") as DbPlayer;
-			return (dbPlayer != null) ? dbPlayer : null;
-		}
+        public static DbPlayer GetPlayer(this Player player)
+        {
+            if (player == null)
+            {
+                return null;
+            }
 
-		public static bool CanInteractAntiDeath(this DbPlayer iPlayer)
-		{
-			if (iPlayer.LastDeath.AddSeconds(3.0) > DateTime.Now)
-			{
-				//iPlayer.SendNotification("Bitte warte kurz!");
-				return false;
-			}
-			return true;
-		}
+            if (player.IsNull)
+            {
+                return null;
+            }
 
-		public static bool CanInteractAntiFlood(this DbPlayer iPlayer, int seconds = 3)
-		{
-			if (iPlayer.LastInteracted.AddSeconds(seconds) > DateTime.Now)
-			{
-			//	iPlayer.SendNotification("Bitte warte kurz!");
-				return false;
-			}
-			iPlayer.LastInteracted = DateTime.Now;
-			return true;
-		}
+            if (!player.HasData("player"))
+            {
+                return null;
+            }
 
-	public static bool CanPressE(this DbPlayer iPlayer)
-		{
-			if (iPlayer.LastEInteract.AddSeconds(3.0) > DateTime.Now)
-			{
-				return false;
-			}
-			iPlayer.LastEInteract = DateTime.Now;
-			return true;
-		}
+            return player.GetData<DbPlayer>("player");
+        }
 
-		public static bool IsValid(this DbPlayer iPlayer, bool ignorelogin = false)
-		{
-			if (iPlayer == null || ((Entity)iPlayer.player).IsNull || (Entity)(object)iPlayer.player == (Entity)null || !NAPI.Pools.GetAllPlayers().Contains(iPlayer.player))
-			{
-				return false;
-			}
-			return ignorelogin || iPlayer.AccountStatus == AccountStatus.LoggedIn;
-		}
-	}
+        public static bool CanInteractAntiDeath(
+            this DbPlayer dbPlayer)
+        {
+            if (!IsValidReference(dbPlayer))
+            {
+                return false;
+            }
+
+            return dbPlayer.LastDeath.AddSeconds(3) <= DateTime.Now;
+        }
+
+        public static bool CanInteractAntiFlood(
+            this DbPlayer dbPlayer,
+            int seconds = 3)
+        {
+            if (!IsValidReference(dbPlayer))
+            {
+                return false;
+            }
+
+            seconds = Math.Max(1, Math.Min(seconds, 60));
+
+            if (dbPlayer.LastInteracted.AddSeconds(seconds) >
+                DateTime.Now)
+            {
+                return false;
+            }
+
+            dbPlayer.LastInteracted = DateTime.Now;
+            return true;
+        }
+
+        public static bool CanPressE(this DbPlayer dbPlayer)
+        {
+            if (!IsValidReference(dbPlayer))
+            {
+                return false;
+            }
+
+            if (dbPlayer.LastEInteract.AddSeconds(3) >
+                DateTime.Now)
+            {
+                return false;
+            }
+
+            dbPlayer.LastEInteract = DateTime.Now;
+            return true;
+        }
+
+        public static bool IsValid(
+            this DbPlayer dbPlayer,
+            bool ignoreLogin = false)
+        {
+            if (!IsValidReference(dbPlayer))
+            {
+                return false;
+            }
+
+            if (!NAPI.Pools.GetAllPlayers().Contains(dbPlayer.player))
+            {
+                return false;
+            }
+
+            return ignoreLogin ||
+                   dbPlayer.AccountStatus == AccountStatus.LoggedIn;
+        }
+
+        private static bool IsValidReference(DbPlayer dbPlayer)
+        {
+            if (dbPlayer == null)
+            {
+                return false;
+            }
+
+            if (dbPlayer.player == null)
+            {
+                return false;
+            }
+
+            if (dbPlayer.player.IsNull)
+            {
+                return false;
+            }
+
+            return true;
+        }
+    }
 }

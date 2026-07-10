@@ -1,7 +1,8 @@
 ﻿using GTANetworkAPI;
+using GVMP;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using GVMP;
 
 namespace Crimelife
 {
@@ -12,11 +13,14 @@ namespace Crimelife
             List<DbPlayer> dbPlayers = new List<DbPlayer>();
             List<Player> clients = NAPI.Pools.GetAllPlayers();
 
-            foreach (Player c in clients)
+            foreach (Player client in clients)
             {
-                DbPlayer dbPlayer = c.GetPlayer();
-                if (dbPlayer == null || !dbPlayer.IsValid(true) || dbPlayer.player == null || dbPlayer.player.IsNull)
+                DbPlayer dbPlayer = client.GetPlayer();
+
+                if (!IsUsablePlayer(dbPlayer))
+                {
                     continue;
+                }
 
                 dbPlayers.Add(dbPlayer);
             }
@@ -26,76 +30,94 @@ namespace Crimelife
 
         public static List<DbPlayer> GetAdminPlayers()
         {
-            List<DbPlayer> dbPlayers = new List<DbPlayer>();
-            List<Player> clients = NAPI.Pools.GetAllPlayers();
+            return GetPlayers()
+                .Where(dbPlayer =>
+                    dbPlayer.Adminrank != null &&
+                    dbPlayer.Adminrank.Permission > 0)
+                .ToList();
+        }
 
-            foreach (Player c in clients)
+        public static List<DbPlayer> GetFactionPlayers(
+            this Faction faction)
+        {
+            if (faction == null)
             {
-                DbPlayer dbPlayer = c.GetPlayer();
-                if (dbPlayer == null || !dbPlayer.IsValid(true) || dbPlayer.player == null || dbPlayer.player.IsNull || dbPlayer.Adminrank.Permission <= 0)
-                    continue;
-
-                dbPlayers.Add(dbPlayer);
+                return new List<DbPlayer>();
             }
 
-            return dbPlayers;
+            return GetPlayers()
+                .Where(dbPlayer =>
+                    dbPlayer.Faction != null &&
+                    dbPlayer.Faction.Id == faction.Id)
+                .ToList();
         }
 
-        /**/
-        public static List<DbPlayer> GetFactionPlayers(this Faction faction)
+        public static List<DbPlayer> GetBusinessPlayers(
+            this Business business)
         {
-            List<DbPlayer> dbPlayers = new List<DbPlayer>();
-            List<Player> clients = NAPI.Pools.GetAllPlayers();
-
-            foreach (Player c in clients)
+            if (business == null)
             {
-                DbPlayer dbPlayer = c.GetPlayer();
-                if (dbPlayer == null || !dbPlayer.IsValid(true) || dbPlayer.player == null || dbPlayer.player.IsNull || dbPlayer.Faction.Id != faction.Id)
-                    continue;
-
-                dbPlayers.Add(dbPlayer);
+                return new List<DbPlayer>();
             }
 
-            return dbPlayers;
+            return GetPlayers()
+                .Where(dbPlayer =>
+                    dbPlayer.Business != null &&
+                    dbPlayer.Business.Id == business.Id)
+                .ToList();
         }
 
-        public static List<DbPlayer> GetBusinessPlayers(this Business business)
+        public static DbPlayer GetPlayer(string name)
         {
-            List<DbPlayer> dbPlayers = new List<DbPlayer>();
-            List<Player> clients = NAPI.Pools.GetAllPlayers();
-
-            foreach (Player c in clients)
+            if (string.IsNullOrWhiteSpace(name))
             {
-                DbPlayer dbPlayer = c.GetPlayer();
-                if (dbPlayer == null || !dbPlayer.IsValid(true) || dbPlayer.player == null || dbPlayer.player.IsNull || dbPlayer.Business.Id != business.Id)
-                    continue;
-
-                dbPlayers.Add(dbPlayer);
+                return null;
             }
 
-            return dbPlayers;
+            return GetPlayers().FirstOrDefault(
+                dbPlayer =>
+                    string.Equals(
+                        dbPlayer.Name,
+                        name,
+                        StringComparison.OrdinalIgnoreCase
+                    )
+            );
         }
 
-        public static DbPlayer GetPlayer(string Name)
+        public static DbPlayer GetPlayerbyfaction(int factionId)
         {
-            DbPlayer dbPlayer = GetPlayers().FirstOrDefault((DbPlayer dbPlayer) => dbPlayer.Name == Name);
-
-            return dbPlayer;
+            return GetPlayers().FirstOrDefault(
+                dbPlayer =>
+                    dbPlayer.Faction != null &&
+                    dbPlayer.Faction.Id == factionId
+            );
         }
 
-        public static DbPlayer GetPlayerbyfaction(int faction)
+        public static DbPlayer GetPlayer(int id)
         {
-            DbPlayer dbPlayer = GetPlayers().FirstOrDefault((DbPlayer dbPlayer) => dbPlayer.Faction.Id == faction);
-
-            return dbPlayer;
+            return GetPlayers().FirstOrDefault(
+                dbPlayer => dbPlayer.Id == id
+            );
         }
 
-
-        public static DbPlayer GetPlayer(int Id)
+        private static bool IsUsablePlayer(DbPlayer dbPlayer)
         {
-            DbPlayer dbPlayer = GetPlayers().FirstOrDefault((DbPlayer dbPlayer) => dbPlayer.Id == Id);
+            if (dbPlayer == null)
+            {
+                return false;
+            }
 
-            return dbPlayer;
+            if (dbPlayer.player == null)
+            {
+                return false;
+            }
+
+            if (dbPlayer.player.IsNull)
+            {
+                return false;
+            }
+
+            return dbPlayer.IsValid(true);
         }
     }
 }
