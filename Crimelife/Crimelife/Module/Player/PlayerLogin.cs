@@ -42,20 +42,57 @@ namespace Crimelife
                     CloseCallback = "showLoginInput"
                 };
 
+                private static bool IsValidRoleplayName(string username)
+{
+    if (string.IsNullOrWhiteSpace(username))
+    {
+        return false;
+    }
+
+    username = username.Trim();
+
+    if (username.Length < 5 || username.Length > 32)
+    {
+        return false;
+    }
+
+    string[] nameParts = username.Split('_');
+
+    if (nameParts.Length != 2)
+    {
+        return false;
+    }
+
+    if (nameParts[0].Length < 2 || nameParts[1].Length < 2)
+    {
+        return false;
+    }
+
+    foreach (char character in username)
+    {
+        if (character != '_' && !char.IsLetter(character))
+        {
+            return false;
+        }
+    }
+
+    return true;
+}
+
                 MySqlQuery query = new MySqlQuery("SELECT * FROM accounts WHERE Social = @user LIMIT 1");
                 query.AddParameter("@user", c.SocialClubName);
 
-                MySqlResult mySqlReaderCon = MySqlHandler.GetQuery(query);
-                MySqlDataReader reader = mySqlReaderCon.Reader;
-                try
-                {
-                    if (reader.HasRows)
-                    {
-                        //     Console.WriteLine("Ja");
-                        reader.Read();
-                        registerUser(c, reader.GetString("Username"));
-                        return;
-                    }
+MySqlResult mySqlReaderCon = MySqlHandler.GetQuery(query);
+
+if (mySqlReaderCon == null ||
+    mySqlReaderCon.Reader == null ||
+    mySqlReaderCon.Connection == null)
+{
+    c.LoginStatus("Die Datenbank ist aktuell nicht erreichbar.");
+    return;
+}
+
+MySqlDataReader reader = mySqlReaderCon.Reader;
                 }
                 catch { }
                 finally
@@ -74,44 +111,81 @@ namespace Crimelife
         }
 
         [RemoteEvent("registerUser")]
-        public static void registerUser(Player c, string username)
+public static void registerUser(Player player, string username)
+{
+    if (player == null || player.IsNull)
+    {
+        return;
+    }
+
+    username = username?.Trim();
+
+    if (!IsValidRoleplayName(username))
+    {
+        player.SendNotification(
+            "Der Name muss aus Vorname_Nachname bestehen und darf maximal 32 Zeichen lang sein.\nBeispiel: Max_Mustermann",
+            true
+        );
+
+        TextInputBoxObject inputBox = new TextInputBoxObject
         {
-            //  Console.WriteLine($"{username}");
-            bool flag = false;
-            foreach (char c2 in username)
-            {
-                if (c2 == '_')
-                {
-                    flag = true;
-                }
-            }
+            Title = "Registrierung",
+            Message = "Gib einen Namen im Format Vorname_Nachname ein.",
+            Callback = "registerUser",
+            CloseCallback = "showLoginInput"
+        };
 
-            if (username.Length > 32)
-                flag = false;
+        player.OpenTextInputBox(inputBox);
+        return;
+    }
 
-            if (username != username.RemoveSpecialCharacters())
-                flag = false;
+    MySqlQuery query = new MySqlQuery(
+        "SELECT Id FROM accounts WHERE Username = @username LIMIT 1"
+    );
 
-            if (!flag)
-            {
-                c.SendNotification("Der Name darf nur aus einem Vor- und Nachnamen bestehen und nur 32 Zeichen lang sein. Beispiel: Max_Mustermann", true);
-                TextInputBoxObject textInputBoxObject = new TextInputBoxObject
-                {
-                    Title = "Registrierung",
-                    Message = "Registriere dich indem du deinen Benutzernamen eingibst",
-                    Callback = "registerUser",
-                    CloseCallback = "showLoginInput"
-                };
+    query.AddParameter("@username", username);
 
-                c.OpenTextInputBox(textInputBoxObject);
-            }
-            else
-            {
-                c.OpenLoginWindow(username);
-                c.Name = username;
-                WebhookSender.SendMessage("Login", "Der Spieler " + c.Name + " hat sich eingeloggt Name " + username + " ", Webhooks.joinlogs, "Loggin");
-            }
+    MySqlResult result = MySqlHandler.GetQuery(query);
+
+    if (result == null ||
+        result.Reader == null ||
+        result.Connection == null)
+    {
+        player.SendNotification(
+            "Die Datenbank ist aktuell nicht erreichbar."
+        );
+
+        return;
+    }
+
+    try
+    {
+        if (result.Reader.HasRows)
+        {
+            player.SendNotification(
+                "Dieser Charaktername ist bereits vergeben.",
+                true
+            );
+
+            return;
         }
+    }
+    finally
+    {
+        result.Reader.Dispose();
+        result.Connection.Dispose();
+    }
+
+    player.Name = username;
+    player.OpenLoginWindow(username);
+
+    WebhookSender.SendMessage(
+        "Login",
+        $"Der Spieler {username} hat das Loginfenster geöffnet.",
+        Webhooks.joinlogs,
+        "Login"
+    );
+}
 
         [RemoteEvent("showLoginInput")]
         public void showLoginInput(Player c)
@@ -128,11 +202,28 @@ namespace Crimelife
             c.OpenTextInputBox(textInputBoxObject);
         }
 
-        [RemoteEvent("PlayerLogin")]
-        public static async void onPlayerLogin(Player c, string password)
-        {
-            DbPlayer p = c.GetPlayer();
-            if (c == null) return;
+[RemoteEvent("PlayerLogin")]
+public static async void onPlayerLogin(Player c, string password)
+{
+    if (c == null || c.IsNull)
+    {
+        return;
+    }
+
+    if (string.IsNullOrWhiteSpace(c.Name) ||
+        string.IsNullOrWhiteSpace(password))
+    {
+        c.LoginStatus("Ungültige Login-Daten.");
+        return;
+    }
+
+    if (password.Length > 128)
+    {
+        c.LoginStatus("Ungültige Login-Daten.");
+        return;
+    }
+
+    DbPlayer p = c.GetPlayer();
 
             try
             {
@@ -572,18 +663,5 @@ namespace Crimelife
             }
         }
 
-        [RemoteEvent("kick")]
-        public void kick(Player c)
-        {
-            try
-            {
-                c.Kick();
-            }
-            catch (Exception ex)
-            {
-                Logger.Print("[EXCEPTION kick] " + ex.Message);
-                Logger.Print("[EXCEPTION kick] " + ex.StackTrace);
-            }
-        }
     }
 }
