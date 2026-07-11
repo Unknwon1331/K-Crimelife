@@ -1,48 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>K-Crimelife Benachrichtigungen</title>
+    <link rel="stylesheet" href="../ui/theme.css">
     <link rel="stylesheet" href="style.css">
-
-    <script
-    src="https://code.jquery.com/jquery-3.5.1.js"
-    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-    crossorigin="anonymous"></script>
 </head>
-
 <body>
-
-    <div id="notifications">
-
-    </div>
-
-    <script>
-        $(".notification").fadeOut();
-    </script>
+    <main class="notification-layer" aria-label="Benachrichtigungen">
+        <section id="global-region" class="notification-region global-region" aria-live="assertive" aria-atomic="true"></section>
+        <section id="player-region" class="notification-region player-region" aria-live="polite" aria-relevant="additions"></section>
+    </main>
+    <script src="ui.js"></script>
 </body>
-
-<script>
-    
-function showNotify(message, duration, color, title) {
-    document.getElementById("notifications").innerHTML +=
-          '<div class="notification"><div class="notification-title"><p style="color:' + color +  ';" id="notfication-title-content"><font style="color: #' +
-          color +
-          ';">' +
-          title +
-          '</font></p></div><div class="notification-message"><p id="notfication-message-content">' +
-          message +
-          "</p></div></div>";
-
-    
-
-    $(".notification").delay(duration).fadeOut("slow");
-}
-
-
-</script>
-
 </html>

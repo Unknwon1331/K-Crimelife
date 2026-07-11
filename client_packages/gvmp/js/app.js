@@ -395,7 +395,6 @@ function closeComputer() {
     if (computeropen == true) {
         computeropen = false;
         components.Computer.show(null)
-        $.post('https://Scripts/close');
     }
 }
 
@@ -411,7 +410,6 @@ function closePhone() {
     if (phoneopen == true) {
         phoneopen = false; 
         components.Smartphone.invisible()
-        $.post('https://Scripts/close');
     }
 }
 

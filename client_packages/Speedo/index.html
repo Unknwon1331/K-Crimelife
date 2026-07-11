@@ -1,120 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Speedometer K-Scripts</title>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-   <label class="unselectable">
-    <div id="speedoclass" class="speedoclass">
-    <div class="speedometer"></div>
-	<div class="speedometer2"></div>
-	<div class="speedometer3"></div>
-	<div class="speedometer4"></div>
-	<div class="speedometer5"></div>
-	<div class="speedometer6"></div>
-	<div class="anzeige">
-	<img src="img/on.png" width="23px" height="23px" id="on">
-	<img src="img/unlocked.png" width="23px" height="23px" id="lock">
-	<div  id="speed2"></div>
-	<p id="weite">25040.20</p>
-	<p id="weitekm">KM</p>
-    </div>
-    <p id="KM">0 KM/H</p>
-</div>
-</label>
-    <div class="main">
-      <div class="icons">
-        <h3 class="only font"><span id="gear" class="font">2</span></h3>
-        <h3 class="speed white font">
-        <span id="speed" class="font"></span>
-        </h3>
-        <h3 class="only font"><span id="health" class="font"></span></h3>
-      </div>
-      <progress id="file" max="185" value=""></progress>
-    </div>
-    <script src="./car.js"></script>
-<script>
-let speedoc = document.getElementById("speedoclass")
-let KMH = document.getElementById('KMH')
-speedoclass.style.display = "none";
-let blocknone = 0;
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>K-Crimelife Fahrzeug-HUD</title>
+    <link rel="stylesheet" href="../ui/theme.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="vehicle-hud" class="vehicle-hud is-hidden" aria-label="Fahrzeuganzeige">
+        <div class="dial-shell">
+            <svg class="speed-arc" viewBox="0 0 240 220" aria-hidden="true">
+                <path class="arc-track" pathLength="100" d="M35 174 A92 92 0 1 1 205 174"/>
+                <path id="speed-progress" class="arc-progress" pathLength="100" d="M35 174 A92 92 0 1 1 205 174"/>
+                <g class="arc-ticks">
+                    <path d="M38 176l10-5M31 145l12-2M33 113l12 2M45 83l11 6M65 59l9 9M91 43l5 11M120 37v12M149 43l-5 11M175 59l-9 9M195 83l-11 6M207 113l-12 2M209 145l-12-2M202 176l-10-5"/>
+                </g>
+            </svg>
 
+            <div class="speed-readout">
+                <span id="speed" class="speed-value">0</span>
+                <span class="speed-unit">KM/H</span>
+                <span id="gear" class="gear-value">N</span>
+            </div>
 
-function speed(speed)
+            <div class="vehicle-status">
+                <div id="fuel-status" class="status-item fuel-status" title="Tankfüllstand">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M6 3h9v18H6zM8.5 6h4M15 8h2l2 2v7.5a1.5 1.5 0 0 0 3 0V8l-2-2"/>
+                    </svg>
+                    <span id="fuel">--</span>
+                </div>
+                <div id="lock-status" class="status-item lock-status is-unlocked" title="Fahrzeug entriegelt">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="5" y="10" width="14" height="11" rx="2"/>
+                        <path id="lock-shackle" d="M8 10V7a4 4 0 0 1 7.4-2.1"/>
+                    </svg>
+                    <span id="lock-label">OFFEN</span>
+                </div>
+            </div>
 
-{			
-    let KM = document.getElementById('KM').innerHTML = speed + " KM/H";
-}
+            <div id="engine-indicator" class="engine-indicator" title="Motorstatus">
+                <span></span>MOTOR
+            </div>
+        </div>
 
-function engine(running)
-{			
-    if(running) {
-        document.getElementById('on').src = "img/on.png";
-    }
-    else
-    {
-        document.getElementById('on').src = "img/off.png";
-    }
-    
-}
-
-function locked(lock)
-{			
-    if(lock == 2) {
-        document.getElementById('lock').src = "img/locked.png";
-    }
-    else
-    {
-        document.getElementById('lock').src = "img/unlocked.png";
-    }
-    
-}
-
-//
-
-function show() {
-    speedoclass.style.display = "block";
-}
-
-function hide() {
-    speedoclass.style.display = "none";
-}
-
-</script>
-    <script>
-      function car(gear, speed, fclass) {
-        var classs = [
-          "Compacts",
-          "Sedans",
-          "SUVs",
-          "Coupes",
-          "Muscle",
-          "Sports Classics",
-          "Sports",
-          "Super",
-          "Motorcycles",
-          "Off-road",
-          "Industrial",
-          "Utility",
-          "Vans",
-          "Cycles",
-          "Boats",
-          "Helicopters",
-          "Planes",
-          "Service",
-          "Emergency",
-          "Military",
-          "Commercial",
-          "Trains",
-          "Open Wheels",
-        ];
-        document.querySelector("#gear").innerText = gear
-        document.querySelector("#file").setAttribute("value", speed);
-      }
-    </script>
-  </body>
+        <div class="distance-row" title="Kilometerstand">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="6" cy="17" r="2"/><circle cx="18" cy="17" r="2"/>
+                <path d="M8 17h8M4 14l2-6h10l4 6M8 8l1.5-3h5L16 8"/>
+            </svg>
+            <span id="mileage">--</span>
+            <small>KM</small>
+        </div>
+    </section>
+    <script src="ui.js"></script>
+</body>
 </html>
